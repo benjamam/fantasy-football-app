@@ -1,0 +1,27 @@
+<p>draft history</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Round</th>
+            <th scope="col">Ben</th>
+            <th scope="col">Adam</th>
+            <th scope="col">Brandon</th>
+            <th scope="col">RJ</th>
+            <th scope="col">Mason</th>
+            <th scope="col">Roger</th>
+            <th scope="col">Bolden</th>
+            <th scope="col">Kyle</th>
+            <th scope="col">Shaker</th>
+            <th scope="col">Travis</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rds of draft2017.rounds">
+            <td>{{rds.roundNum}}</td>
+            <td *ngFor="let pks of rds.picks">
+                <p>{{ pks.name }}</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
