@@ -9,12 +9,10 @@ import { DraftComponent } from './draft-history/draft/draft.component';
 import { HistoryComponent } from './history/history.component';
 
 import { RouterModule, Routes, Router } from '@angular/router';
+import { DraftEntryComponent } from './admin/draft-entry/draft-entry.component';
 
-const appRoutes: Routes = [
-  { path: 'history', component: HistoryComponent },
-  { path: '', component: HomeComponent},
-  { path: 'drafthistory', component: DraftHistoryComponent}
-];
+import { ROUTES } from './routes';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,19 +20,21 @@ const appRoutes: Routes = [
     HomeComponent,
     DraftHistoryComponent,
     DraftComponent,
-    HistoryComponent
+    HistoryComponent,
+    DraftEntryComponent
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // debugging
+      ROUTES,
+      { enableTracing: false } // debugging
     ),
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [ NO_ERRORS_SCHEMA ]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 
 
