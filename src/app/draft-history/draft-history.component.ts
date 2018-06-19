@@ -11,16 +11,34 @@ import { Observable } from 'rxjs/Observable';
 })
 export class DraftHistoryComponent implements OnInit {
 
-  draft: Observable<any>;
+  draft: Observable<Draft>;
+  round: Observable<any>;
+  year: string;
+  roundNum: string;
 
-  constructor(private apiService: ApiServiceService) { }
+  constructor(private apiService: ApiServiceService) {
+    this.year = '';
+  }
 
   ngOnInit() {
   }
 
+  onYearChange(event, newYear) {
+    this.year = newYear;
+
+  }
   getDraft() {
-    this.draft = this.apiService.getDraft(2017);
+    console.log('year', this.year);
+    this.draft = <Observable<Draft>>this.apiService.getDraft(this.year);
+    this.draft.forEach(v => console.log(v));
   }
 
+  // getDraft(year: number) {
+  //   this.draft = this.apiService.getDraft(year);
+  // }
+
+  getRound() {
+    this.round = this.apiService.getRound(this.year, this.roundNum);
+  }
 }
 

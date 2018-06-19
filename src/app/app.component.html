@@ -1,18 +1,22 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color-dark">
-    <logo><a class="navbar-brand nav-link" routerLink="">The League</a></logo>
+    <logo>
+        <a class="navbar-brand nav-link" routerLink="">The League</a>
+    </logo>
     <links>
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item dropdown" dropdown>
-              <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-              History<span class="caret"></span></a>
-              <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                  <a class="dropdown-item waves-light nav-link" mdbRippleRadius routerLink="drafthistory">Draft History</a>
-                  
-              </div>
-          </li>
-      </ul>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
+                    History
+                    <span class="caret"></span>
+                </a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light nav-link" mdbRippleRadius routerLink="drafthistory">Draft History</a>
+
+                </div>
+            </li>
+        </ul>
     </links>
-    
+
 </mdb-navbar>
 
 <!-- <nav class="navbar navbar-fixed-top">
@@ -24,9 +28,7 @@
         </ul>
     </div>
 </nav> -->
-<router-outlet></router-outlet>
-<div style="text-align:center">
+<div class="text-center">
+    <router-outlet></router-outlet>
 
 </div>
-
-

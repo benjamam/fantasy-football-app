@@ -1,9 +1,16 @@
-<p>draft history</p>
+<div class="container">
+    <h1>Draft History</h1>
+    <select [(ngModel)]="year" #yearSelector (change)="onYearChange($event, yearSelector.value)" name="sel2">
+        <option>Select year..</option>
+        <option [value]="2017">2017</option>
+    </select>
+    <button class="btn btn-primary" (click)="getDraft()">Get Draft</button>
 
-<div>
-    <span *ngFor="let pks of draft | async">
-        <p>{{ pks.Player }}</p>
-    </span>
+    <div>
+        <table class="table">
+            <td *ngFor="let pks of draft | async">
+                <tr>{{ pks.Player }} <br/> {{ pks.Pick }}</tr>
+            </td>
+        </table>
+    </div>
 </div>
-
-<button class="btn btn-primary" (click)="getDraft('2017')">Get 2017 Draft</button>

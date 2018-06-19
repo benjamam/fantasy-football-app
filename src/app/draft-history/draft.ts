@@ -9,6 +9,11 @@ export class Round {
 }
 
 export class Pick {
-    pickNum: number;
-    name: string;
+    Drafter: string;
+    OverallRank: string;
+    Pick: string;
+    Player: string;
+    Position: string;
+    PositionRank: string;
+    round: string;
 }
