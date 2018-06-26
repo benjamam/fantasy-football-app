@@ -30,7 +30,7 @@ export class DraftHistoryComponent implements OnInit {
   getDraft() {
     console.log('year', this.year);
     this.draft = <Observable<Draft>>this.apiService.getDraft(this.year);
-    this.draft.forEach(v => console.log(v));
+    // this.draft.forEach(v => console.log(v));
   }
 
   // getDraft(year: number) {
