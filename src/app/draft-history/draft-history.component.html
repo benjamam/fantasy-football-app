@@ -1,30 +1,22 @@
-<div class="container">
-    <h1>Draft History</h1>
-    <select [(ngModel)]="year" #yearSelector (change)="onYearChange($event, yearSelector.value)" name="sel2">
-        <option>Select year..</option>
-        <option [value]="2017">2017</option>
-    </select>
-    <button class="btn btn-primary waves-light" mdbWavesEffect (click)="getDraft()">Get Draft</button>
+<div class="view intro-2">
+    <div class="full-bg-img">
+        <div class="mask flex-center">
+            <div class="container text-center white-text wow fadeInUp">
+                <h1>Draft History</h1>
+                <select [(ngModel)]="year" #yearSelector (change)="onYearChange($event, yearSelector.value)" name="sel2">
+                    <option>Select year..</option>
+                    <option [value]="2017">2017</option>
+                </select>
+                <button class="btn btn-primary waves-light" mdbWavesEffect (click)="getDraft()">Get Draft</button>
+            </div>
+        </div>
+    </div>
+</div>
+<main class="text-center py-5">
 
-    <div>
-        <!-- <table class="table table-responsive" *ngFor="let pks of draft | async; index as i">
-            <tr *ngIf="i%10==0">
-                <td>
-                    {{ pks.Player }}
-                    <br/> {{ pks.Pick }}
-                </td>
-            </tr>
-        </table> -->
-        <table class="table table-responsive table-hover">
-            <!-- <ng-template ngFor let-pick [ngForOf]="draft | async" let-i="index">
-                <thead>
-                    <tr>
-                        <th *ngIf="i < 10">
-                            {{ pick.Drafter}}
-                        </th>
-                    </tr>
-                </thead>
-            </ng-template> -->
+    <div class="container draft-container">
+        <h1>{{year}} Draft</h1>
+        <table class="table table-responsive table-hover draft-table">
             <ng-template ngFor let-pick [ngForOf]="draft | async" let-i="index">
                 <tbody>
                     <tr *ngIf="i%10==0">
@@ -35,15 +27,10 @@
                                 <hr> {{pk.Drafter }}
                             </td>
                         </ng-template>
-
-                        <!-- <td>
-                            {{ pick.Player }}
-                            <br/> {{ pick.Pick }}
-                        </td> -->
                     </tr>
                 </tbody>
-
             </ng-template>
         </table>
     </div>
-</div>
+
+</main>

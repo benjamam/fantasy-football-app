@@ -31,6 +31,7 @@ export class DraftHistoryComponent implements OnInit {
     console.log('year', this.year);
     this.draft = <Observable<Draft>>this.apiService.getDraft(this.year);
     // this.draft.forEach(v => console.log(v));
+    document.querySelector('.draft-table').scrollIntoView();
   }
 
   // getDraft(year: number) {

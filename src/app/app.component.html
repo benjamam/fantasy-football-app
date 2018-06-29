@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color-dark">
+<!-- <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color-dark">
     <logo>
         <a class="navbar-brand nav-link" routerLink="">The League</a>
     </logo>
@@ -17,18 +17,28 @@
         </ul>
     </links>
 
-</mdb-navbar>
+</mdb-navbar> -->
 
-<!-- <nav class="navbar navbar-fixed-top">
-    <div class="container">
-        <a class="navbar-brand">Angular Router</a>
-        <ul class="nav navbar-nav" routerLinkActive="active">
-            <li class="nav-item"><a class="nav-link" routerLink="">Home</a></li>
-            <li class="nav-item"><a class="nav-link" routerLink="history">History</a></li>
-        </ul>
+<header class="h-100">
+    <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
+        <logo>
+            <a class="logo navbar-brand" routerLink="">
+                <strong>The League</strong>
+            </a>
+        </logo>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" routerLink="drafthistory">Draft History</a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link">Profile</a>
+                </li>
+            </ul>
+        </links>
+    </mdb-navbar>
+    <div class="text-center">
+        <router-outlet></router-outlet>
+
     </div>
-</nav> -->
-<div class="text-center">
-    <router-outlet></router-outlet>
-
-</div>
+</header>
